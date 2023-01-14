@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+$white-color: #ffffff;
+$text-color: #333333;
+$accent-color: #e11c4b;
+
+body {
+  background-color: $white-color;
+  color: $text-color;
+
+  font-family: 'Rosario', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+%text-16 {
+  line-height: 19px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+
+  max-width: 1150px;
+
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+%wrapper {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.navbar {
+  @extend %wrapper;
+  @extend %text-16;
+
+  width: 100%;
+
+  &__item {
+    margin-right: 36px;
+
+    &:nth-last-child(1) {
+      margin: auto;
+    }
+
+    &--location {
+      ::before {
+        content: '';
+        display: block;
+
+        width: 18px;
+        height: 18px;
+
+        margin-right: 6px;
+
+        background: center center url(../images/location.svg) no-repeat;
+      }
+    }
+
+    &--shop {
+      ::before {
+        content: '';
+        display: block;
+
+        width: 18px;
+        height: 18px;
+
+        margin-right: 6px;
+
+        background: center center url(../images/shop.svg) no-repeat;
+      }
+    }
+
+    &--phone {
+      ::before {
+        content: '';
+        display: block;
+
+        width: 18px;
+        height: 18px;
+
+        margin-right: 6px;
+
+        background: center center url(../images/phone.svg) no-repeat;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-color;
+
+    @extend %wrapper;
+  }
+
+  &__top {
+    @extend %wrapper;
+
+    padding: 8px 0;
+    width: 100%;
+
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  &__shops {
+    @extend %wrapper;
+  }
+
+  &__menu {
+    @extend %wrapper;
+    list-style-type: none;
+  }
+
+  &__center {
+    @extend %wrapper;
+
+    &--title {
+      color: $accent-color;
+    }
+  }
+
+  &__callback {
+    @extend %wrapper;
+  }
+
+  &__line {
+    width: 100vh !important;
+
+    height: 1px;
+
+    background: $accent-color;
+  }
+}
